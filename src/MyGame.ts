@@ -9,18 +9,28 @@
 class MyGame extends Game {
 
     protected initResources(): any {
-        //TODO add more resources as needed
         return new ResourceConfig(
             [
                 "PNG/UI/buttonBlue.png",
+                "PNG/UI/playerLife1_blue.png",
+                "PNG/playerShip1_blue.png",
+                "PNG/Lasers/laserRed07.png",
+                "PNG/Meteors/meteorBrown_big1.png",
+                "PNG/Meteors/meteorBrown_big2.png",
+                "PNG/Meteors/meteorBrown_big3.png",
+                "PNG/Meteors/meteorBrown_big4.png",
+                "PNG/Meteors/meteorBrown_med1.png",
+                "PNG/Meteors/meteorBrown_med3.png",
+                "PNG/Meteors/meteorBrown_small1.png",
+                "PNG/Meteors/meteorBrown_small2.png",
+                "PNG/Meteors/meteorBrown_tiny1.png",
+                "PNG/Meteors/meteorBrown_tiny2.png",
             ],
             "./assets/images/SpaceShooterRedux"
         );
     }
     
     protected initGame() {
-        //TODO configure the session as needed
-        //These are all examples. Add properties if you like
         this.session.player = "Player one";
         this.session.score = 0;
         this.session.level = 1;
@@ -42,9 +52,10 @@ class MyGame extends Game {
     }
 
     protected initViews(): {[key: string]: View} {
-        //TODO add more views as needed
         return {
             'start' : new StartView(),
+            'level' : new LevelView(),
+            'title' : new TitleView(),
         };
     }
 
